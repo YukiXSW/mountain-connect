@@ -1,0 +1,120 @@
+/* === Estilo general === */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #d7ccc8, #a1887f);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #3e2723;
+}
+
+/* === Contenedor principal === */
+form {
+    background-color: #f5f2ef;
+    width: 420px;
+    padding: 35px 45px;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(62, 39, 35, 0.25);
+    border: 1px solid #d7ccc8;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* === Animación suave === */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* === Título === */
+h2 {
+    text-align: center;
+    color: #4e342e;
+    font-weight: 700;
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+}
+
+/* === Etiquetas === */
+label {
+    font-weight: 600;
+    color: #3e2723;
+}
+
+/* === Campos de entrada === */
+input[type="text"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    border: 1.5px solid #bcaaa4;
+    border-radius: 8px;
+    font-size: 15px;
+    box-sizing: border-box;
+    background-color: #fffaf4;
+    transition: all 0.3s ease;
+}
+
+/* === Efecto al enfocar === */
+input:focus,
+select:focus {
+    border-color: #6d4c41;
+    box-shadow: 0 0 6px rgba(109, 76, 65, 0.4);
+    outline: none;
+}
+
+/* === Mensajes de error === */
+span {
+    font-size: 13px;
+    color: #b71c1c;
+}
+
+/* === Botón === */
+button {
+    width: 100%;
+    background-color: #6d4c41;
+    color: #fbe9e7;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+button:hover {
+    background-color: #5d4037;
+    transform: translateY(-2px);
+}
+
+/* === Mensaje de éxito === */
+.success {
+    text-align: center;
+    background: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #c8e6c9;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+/* === Ajustes menores === */
+form input, form select {
+    margin-bottom: 15px;
+}
+
+br {
+    line-height: 1.3;
+}
+a {
+    color: #6d4c41;
+    text-decoration: none;
+    font-weight: 600;
+}

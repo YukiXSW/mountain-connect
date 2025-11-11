@@ -1,7 +1,3 @@
-<!-- queda hacer 
-     Validación coincidencia contraseñas
-     Mensajes de error específicos
-    Almacenamiento temporal en array (sin BD aún)-->
 <?php
 session_start();
 
@@ -33,17 +29,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors['email'] = "El email no tiene un formato válido.";
     }
 
-    if (empty($password)) {
+    if (empty($password)) { # Si la linea está vacía mostramos el error
         $errors['password'] = "La contraseña es obligatoria.";
     } elseif (strlen($password) < 8) {
-        $errors['password'] = "La contraseña debe tener mínimo 8 caracteres.";
+        $errors['password'] = "La contraseña debe tener mínimo 8 caracteres."; # Si la contraseña tiene menos de 8 caracteres mostramos el error
     }
-
-    if (empty($confirm_password)) {
+    # Linea donde validamos la confirmación de la contraseña
+    if (empty($confirm_password)) { # Si la linea está vacía mostramos el error 
         $errors['confirm_password'] = "Debe confirmar la contraseña.";
-    } elseif ($password !== $confirm_password) {
+    } elseif ($password !== $confirm_password) { # Si las contraseñas no coinciden mostramos el error
         $errors['confirm_password'] = "Las contraseñas no coinciden.";
-    }
+    }# Si todo es correcto no mostramos ningún error
 
     if (empty($experiencia)) $errors['experiencia'] = "Seleccione su nivel de experiencia.";
     if (empty($especialidad)) $errors['especialidad'] = "La especialidad es obligatoria.";
@@ -51,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Si no hay errores → guardamos el usuario
     if (empty($errors)) {
-        
+      # Almacenamiento temporal en array (sin BD aún)  
         $_SESSION['users'][] = [
             'username' => $username,
             'email' => $email,
@@ -73,6 +69,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html lang="es">
     <head>
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="../assets/css/style.css">
+
+
         <title>Registro - MountainConnect</title>
     </head>
     <body>
