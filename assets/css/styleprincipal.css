@@ -90,6 +90,31 @@ nav a:hover {
   color: #f5f7f8;                        /* CAMBIO: texto más claro */
 }
 
+.profile-card h2 {
+    font-size: 2rem; /* título más grande */
+    margin-bottom: 20px;
+}
+
+.profile-card label {
+    font-size: 1.2rem; /* etiquetas más grandes */
+    display: block;
+    margin-bottom: 5px;
+}
+
+.profile-card input {
+    font-size: 1.1rem; /* inputs más grandes */
+    padding: 10px;
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+}
+
+.profile-card button {
+    font-size: 1.1rem; /* botón más grande */
+    padding: 12px 25px;
+}
+
 .profile-card:hover {
   transform: translateY(-5px);
 }
