@@ -48,8 +48,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     # evitar duplicados en nombre de usuario
     if (empty($errors)){
         foreach ($_SESSION['users'] as $user){
-            if ($user['username'] === $username) {
-                $errors['username'] = "El nombre del usuario ya está en uso.";
+            if ($user['username'] === $username) { # si hay un usuario ya creado con ese nombre e intenta usar ese nombre para crearlo dara un error
+                $errors['username'] = "El nombre del usuario ya está en uso."; 
                 break;
             }
 

@@ -2,25 +2,30 @@
 session_start();
 
 // Validación de credenciales contra array temporal
-$usuarios = [
-    ['username' => 'lili', 'email' => 'lili@gmail.com', 'password' => '12345678'],
-    ['username' => 'ale', 'email' => 'ale@gmail.com', 'password' => 'abcdefgh']
-];
+$users_registered = $_SESSION['users'] ?? [];
 
 $error = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $login = trim($_POST['login']);
-    $password = trim($_POST['password']);
+    # recoger los datos de usuario y contraseña
+    $login_input = trim($_POST['login'] ?? '');
+    $password_input = trim($_POST['password'] ?? '');
 
-    foreach ($usuarios as $user) {
-        if (($user['username'] === $login || $user['email'] === $login) && $user['password'] === $password) {
+    $authenticated = false; # En principio la autenticación aun no está ok
+
+    foreach ($users_registered as $user) {
+        $user_login_match = ($user['username'] === $login_input) || strtolower($user['email']) === strtolower($login_input); # comprueba datos de usuario o correo correctos
+
+        if($user_login_match && $user['password'] === $password_input) { # $user['password'] === $password_input comprobamos que el usuario escriba la misma contraseña q el registro
             $_SESSION['user'] = $user; # Creación de sesión de usuario
+            $user_found = true; # si encuentra el usuario, accede a profile.php
             header('Location: profile.php');
             exit;
         }
     }
-    $error = 'Credenciales incorrectas. Intenta de nuevo.';
+    if (!$authenticated){ # si falla muestra el siguiente mensaje
+        $error = 'Error: Usuario/contraseña incorrectos.';
+    }
 }
 ?>
 
