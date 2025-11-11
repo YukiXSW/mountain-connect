@@ -45,6 +45,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($especialidad)) $errors['especialidad'] = "La especialidad es obligatoria.";
     if (empty($provincia)) $errors['provincia'] = "Seleccione una provincia.";
 
+    # evitar duplicados en nombre de usuario
+    if (empty($errors)){
+        foreach ($_SESSION['users'] as $user){
+            if ($user['username'] === $username) {
+                $errors['username'] = "El nombre del usuario ya está en uso.";
+                break;
+            }
+
+            if (strtolower ($user['email']) === strtolower($email)) { # ignorando las mayusculas y las minusculas, si ya hay un usuario con ese correo, ejecuta un error
+                $errors['email']= "El email ya está registrado / en uso";
+                break;
+            }
+        }
+    }
+
+
     // Si no hay errores → guardamos el usuario
     if (empty($errors)) {
       # Almacenamiento temporal en array (sin BD aún)  
@@ -57,10 +73,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'provincia' => $provincia
         ];
 
-        $success = "Registro completado con éxito ✅";
+        $success = "Registro completado con éxito";
 
         // Limpiamos valores del formulario
         $username = $email = $password = $confirm_password = $especialidad = $experiencia = $provincia = "";
+        header('Location: login.php');
     }
 }
 ?>
