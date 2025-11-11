@@ -1,3 +1,74 @@
+<!-- queda hacer 
+     Validación coincidencia contraseñas
+     Mensajes de error específicos
+    Almacenamiento temporal en array (sin BD aún)-->
+<?php
+session_start();
+
+#si no existe $_SESSION['users'], entonces creará la variable.
+if (!isset($_SESSION['users'])) {
+    $_SESSION['users'] = [];
+}
+
+$errors = []; #Creamos una variable para los errores
+$success = "";
+
+// Si se envía el formulario
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    // Recogemos y sanitizamos los datos
+    $username = trim($_POST['username'] ?? '');
+    $email = trim($_POST['email'] ?? '');
+    $password = trim($_POST['password'] ?? '');
+    $confirm_password = trim($_POST['confirm_password'] ?? '');
+    $experiencia = $_POST['experiencia'] ?? '';
+    $especialidad = trim($_POST['especialidad'] ?? '');
+    $provincia = $_POST['provincia'] ?? '';
+
+    // Validaciones
+    if (empty($username)) $errors['username'] = "El nombre de usuario es obligatorio.";
+    if (empty($email)) {
+        $errors['email'] = "El email es obligatorio.";
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errors['email'] = "El email no tiene un formato válido.";
+    }
+
+    if (empty($password)) {
+        $errors['password'] = "La contraseña es obligatoria.";
+    } elseif (strlen($password) < 8) {
+        $errors['password'] = "La contraseña debe tener mínimo 8 caracteres.";
+    }
+
+    if (empty($confirm_password)) {
+        $errors['confirm_password'] = "Debe confirmar la contraseña.";
+    } elseif ($password !== $confirm_password) {
+        $errors['confirm_password'] = "Las contraseñas no coinciden.";
+    }
+
+    if (empty($experiencia)) $errors['experiencia'] = "Seleccione su nivel de experiencia.";
+    if (empty($especialidad)) $errors['especialidad'] = "La especialidad es obligatoria.";
+    if (empty($provincia)) $errors['provincia'] = "Seleccione una provincia.";
+
+    // Si no hay errores → guardamos el usuario
+    if (empty($errors)) {
+        
+        $_SESSION['users'][] = [
+            'username' => $username,
+            'email' => $email,
+            'password' => $password, // (Temporal, sin hash hasta BD)
+            'experiencia' => $experiencia,
+            'especialidad' => $especialidad,
+            'provincia' => $provincia
+        ];
+
+        $success = "Registro completado con éxito ✅";
+
+        // Limpiamos valores del formulario
+        $username = $email = $password = $confirm_password = $especialidad = $experiencia = $provincia = "";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
     <head>
