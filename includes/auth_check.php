@@ -1,4 +1,5 @@
-<?php
+<?php 
+# pagina de perfil protegida
 session_start(); # Inicia la sesión PHP
 # validación de sesion
 if (!isset($_SESSION['user'])) { # si no existe la sesión de usuario
