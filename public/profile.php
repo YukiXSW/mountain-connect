@@ -7,15 +7,18 @@ $user = $_SESSION['user'];
 <html lang="es">
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="../assets/css/styleprofile.css">
+        <link rel="stylesheet" href="../assets/css/styleprincipal.css">
         <title>Perfil - MountainConnect</title>
     </head>
     <body>
-        <div class="profile-card">
+        <?php include '../includes/header.php'; ?>
+        <div class="profile-card  text-center mt-5">
             <img src="../assets/images/xiao.jpg" alt="Avatar" class="avatar">
             <h2>Bienvenido, <?= htmlspecialchars($user['username']) ?> 👋</h2>
             <p><strong>Email:</strong> <?= htmlspecialchars($user['email']) ?></p>
             <button class="logout-btn"><a href="logout.php">Cerrar sesión</a></button>
         </div>
+        <?php include '../includes/footer.php'; ?>
     </body>
 </html>
+
