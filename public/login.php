@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html lang="es">
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="../assets/css/stylelogin.css">
+        <link rel="stylesheet" href="../assets/css/styleprincipal.css">
         <title>Login - MountainConnect</title>
     </head>
     <body>
@@ -43,14 +43,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <p style="color:red;"><?= $error ?></p>
         <?php endif; ?>
         <!-- Formulario de login -->
-        <form method="POST" action="">
-            <label>Usuario o Email:</label><br>
-            <input type="text" name="login" required><br><br>
+         <div class="profile-card">
+            <form method="POST" action="">
+                <label>Usuario o Email:</label><br>
+                <input type="text" name="login" required><br><br>
 
-            <label>Contraseña:</label><br>
-            <input type="password" name="password" required><br><br>
+                <label>Contraseña:</label><br>
+                <input type="password" name="password" required><br><br>
 
-            <button type="submit">Entrar</button>
-        </form>
+                <button type="submit">Entrar</button>
+            </form>
+        </div>
     </body>
 </html>
