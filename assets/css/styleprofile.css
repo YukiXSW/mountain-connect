@@ -1,0 +1,81 @@
+/* Fondo general */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #2E8B57, #1E3C72);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Contenedor principal */
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* Tarjeta de perfil */
+.profile-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    width: 320px;
+}
+
+.profile-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Título */
+.profile-card h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+.profile-card h2 span {
+    color: #FFD700; /* Amarillo dorado para resaltar el nombre */
+}
+
+/* Email */
+.profile-card .email {
+    font-size: 1em;
+    color: #e0e0e0;
+    margin-bottom: 25px;
+}
+
+/* Botón de cerrar sesión */
+.logout-btn {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #ff4b5c;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.logout-btn:hover {
+    background-color: #ff2e44;
+    transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .profile-card {
+        width: 90%;
+        padding: 25px;
+    }
+
+    .profile-card h2 {
+        font-size: 1.5em;
+    }
+}
