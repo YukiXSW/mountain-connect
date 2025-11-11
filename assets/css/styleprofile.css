@@ -1,81 +1,65 @@
-/* Fondo general */
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #2E8B57, #1E3C72);
+    background: linear-gradient(135deg, #243B55, #141E30);
     color: #fff;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     height: 100vh;
     margin: 0;
 }
 
-/* Contenedor principal */
-.profile-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
-/* Tarjeta de perfil */
 .profile-card {
-    background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    padding: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    border-radius: 16px;
+    padding: 40px 60px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
     text-align: center;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease;
-    width: 320px;
 }
 
 .profile-card:hover {
     transform: translateY(-5px);
 }
 
-/* Título */
-.profile-card h2 {
-    font-size: 1.8em;
-    margin-bottom: 15px;
+h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
 }
 
-.profile-card h2 span {
-    color: #FFD700; /* Amarillo dorado para resaltar el nombre */
+p {
+    font-size: 1.1em;
+    margin: 10px 0;
 }
 
-/* Email */
-.profile-card .email {
-    font-size: 1em;
-    color: #e0e0e0;
-    margin-bottom: 25px;
-}
-
-/* Botón de cerrar sesión */
 .logout-btn {
-    display: inline-block;
+    background: #ff4b2b;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 30px;
+    margin-top: 25px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.logout-btn a {
     text-decoration: none;
-    background-color: #ff4b5c;
-    color: white;
-    padding: 12px 25px;
-    border-radius: 8px;
+    color: #fff;
     font-weight: bold;
-    transition: background-color 0.3s, transform 0.2s;
 }
 
 .logout-btn:hover {
-    background-color: #ff2e44;
-    transform: scale(1.05);
+    background: #ff3b1f;
 }
 
-/* Responsive */
-@media (max-width: 480px) {
-    .profile-card {
-        width: 90%;
-        padding: 25px;
-    }
-
-    .profile-card h2 {
-        font-size: 1.5em;
-    }
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    object-fit: cover;
+    margin-bottom: 20px;
+    background: #fff3;
 }

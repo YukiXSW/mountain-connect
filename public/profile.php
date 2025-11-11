@@ -11,9 +11,11 @@ $user = $_SESSION['user'];
         <title>Perfil - MountainConnect</title>
     </head>
     <body>
-        <h2>Bienvenido, <?= htmlspecialchars($user['username']) ?> 👋</h2>
-        <p>Email: <?= htmlspecialchars($user['email']) ?></p>
-        <button><p><a href="logout.php">Cerrar sesión</a></p></button> <!--Boton para cerrar sesion-->
-        
+        <div class="profile-card">
+            <img src="../assets/img/avatar_default.png" alt="Avatar" class="avatar">
+            <h2>Bienvenido, <?= htmlspecialchars($user['username']) ?> 👋</h2>
+            <p><strong>Email:</strong> <?= htmlspecialchars($user['email']) ?></p>
+            <button class="logout-btn"><a href="logout.php">Cerrar sesión</a></button>
+        </div>
     </body>
 </html>
