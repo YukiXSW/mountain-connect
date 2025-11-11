@@ -20,7 +20,7 @@ $usuario_logueado = isset($_SESSION['user']);
 
 <body>
 
-<header class="bg-dark text-white p-3">
+<header class="p-3">
     <div class="container d-flex justify-content-between align-items-center flex-wrap">
         <h1 class="h3 mb-0">🏔️ MountainConnect</h1>
 

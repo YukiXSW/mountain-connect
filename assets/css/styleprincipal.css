@@ -29,6 +29,9 @@ body {
   margin: 0;
 }
 
+.p-3{
+  background: linear-gradient(135deg, #1f2d45, #101822); color: #f5f7f8;
+}
 /* ======= NAVBAR ======= */
 header.navbar {
   position: sticky;
@@ -151,7 +154,7 @@ h1 {
 }
 
 .lead {
-  color: #555;
+  color: #ffffff;
   font-size: 1.1rem;
   line-height: 1.6;
   margin-bottom: 2rem;
@@ -266,4 +269,8 @@ p {
   object-fit: cover;
   margin-bottom: 20px;
   background: #fff3;
+}
+
+.mb-4{
+  color: rgb(250, 197, 128);
 }
