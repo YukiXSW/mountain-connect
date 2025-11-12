@@ -274,3 +274,137 @@ p {
 .mb-4{
   color: rgb(250, 197, 128);
 }
+
+
+
+
+.route-form-container {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 30px 40px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  max-width: 600px;
+  margin: 40px auto;
+  color: #f5f7f8;
+}
+
+.route-form-container h2 {
+  text-align: center;
+  color: #dfffe0;
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+}
+
+.route-form-container label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.route-form-container input,
+.route-form-container select,
+.route-form-container textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  background: rgba(255,255,255,0.9);
+  color: #333;
+}
+
+.route-form-container textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.route-form-container input[type="checkbox"] {
+  width: auto;
+  margin-right: 8px;
+}
+
+.route-form-container .checkbox-group label {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.route-form-container .error {
+  color: #ffb3b3;
+  font-size: 0.9rem;
+  margin-top: -8px;
+  margin-bottom: 10px;
+}
+
+.route-form-container .success {
+  background: #c8e6c9;
+  color: #205c3b;
+  padding: 8px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.route-form-container button {
+  width: 100%;
+  background-color: var(--verde-montana);
+  color: #fff;
+  border: none;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transicion);
+}
+
+.route-form-container button:hover {
+  background-color: var(--verde-oscuro);
+}
+
+/* =======================================================
+   ESTILOS PARA LISTADO DE RUTAS
+   ======================================================= */
+
+.routes-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  padding: 40px;
+  justify-items: center;
+}
+
+.route-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  color: #fff;
+  width: 260px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.route-card:hover {
+  transform: translateY(-5px);
+}
+
+.route-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.route-card h3 {
+  color: #dfffe0;
+  margin-bottom: 6px;
+}
+
+.route-card p {
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+  color: #e8f5e9;
+}
