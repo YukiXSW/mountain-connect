@@ -45,5 +45,24 @@ elseif (!filter_var($email, FILTER_VALIDATE_EMAIL))
 6. La contraseña confirmada tiene que coincidir con la contraseña
 ```$password !== $confirm_password``` 
 Si no coincide envia un error
-![Register.php] (/assets/images/paginaregister.jpg)
+
+Aquí te presento la página de register.php
+![Register.php](/assets/images/paginaregister.jpg)
+
 Al darle a registrar te tiene que llevar a la pagina de login.php.
+En la que me he encontrado problemas como por ejemplo. Me creaba bien los usuarios, sin embargom a la hora de hacer login, me daba error en las credenciales, y en la unica que no me daba error era en la primera cuenta creada. El problema se situaba en el array temporal. Guarde el array con valores y por ello me daba error.
+```
+$users_registered = $_SESSION['users'] ?? [];
+```
+Aquí guardas los usuarios que ya se han registrado.
+En la página de login.php, tiene que buscar si el usuario existe, y si no existe, mandar un error. Al igual que manda un error si la contraseña esta incorrecta. Sin embargo, si existe, directamente te manda a la pagina de profile.php.
+![login.php](/assets/images/login.jpg)
+
+En la página de profile.php hemos conectado header de includes _includes/header.php_
+`<?php include '../includes/header.php'; ?>`
+Y el footer _includes/footer.php_
+`<?php include '../includes/footer.php'; ?>`
+Y código html :)
+
+![profile.php](/assets/images/paginaprofile.jpg)
+
