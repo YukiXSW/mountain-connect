@@ -1,5 +1,9 @@
 # Proyecto PHP
 ## Mountain Connect
+### Introducción
+El proyecto Mountain-Connect permite a los usuarios registrarse, iniciar sesión, crear rutas, explorar rutas (ver el listado de rutas creadas por los usuarios), también tiene la opcion de darle Like/Comentar y poder marcar completado, cuando ya has hecho la ruta, también te permite visualizar tu perfil, editarlo y ver las actividades realizadas. Además de crear la ruta, puedes subir fotos.
+
+### Explicación sobre lo realizado en el Proyecto Mountain-Connect
 
 He creado el codigo de register.php en la que tiene un formulario dentro del html, el formulario recogerá los datos del usuario, y lo enviará de manera segura (al usar el POST), cada campo span MUESTRA UN ERROR.
 En el nivel de experiencia, en caso de que haya un error en algún campo anterior, siga seleccionado el nivel de experiencia, y no se borre. Con el isset comprueba si existe y con el "selected". Se mantiene el valor seleccionado. Al igual pasa con la provincia seleccionada.
@@ -7,7 +11,7 @@ En el nivel de experiencia, en caso de que haya un error en algún campo anterio
 
 El codigo register.php tiene todas las validaciones. Usando el metodo de la caja blanca.
 Validaciones:
-1. Evitar usuarios repetidos (nombres repetidos exactamente, no vale Lili y lili, esto querria decir que son diferentes usuarios) y te permite crearlo.
+1. Evitar usuarios repetidos, es valido crear un usuario con el nombre de usuario Lili y lili, sin embargo, una vez creado, si vuelves a intentar crear un usuario Lili (con los mismos caracteres (mayusculas y minusculas)) no te dejará crearlo y te mostrará un mensaje de error.
 ```
 foreach ($_SESSION['users'] as $user){
     if ($user['username'] === $username) { 
@@ -66,3 +70,5 @@ Y código html :)
 
 ![profile.php](/assets/images/paginaprofile.jpg)
 
+Estando en la página de profile.php, en el header, tienes 4 opciones, la primera te lleva a la pagina principal que es _/public/index.php_. 
+En la página de _index.php_, aparece en el header, la opción de inicio, que es donde nos situamos, las rutas, el perfil y cerrar sesión del usuario. Además tenemos 2 opciones
