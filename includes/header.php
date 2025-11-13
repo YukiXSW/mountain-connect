@@ -30,13 +30,15 @@ $usuario_logueado = isset($_SESSION['user']);
                     <a class="nav-link text-white" href="../public/index.php">Inicio</a>
                 </li>
 
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="../public/routes/list.php">Rutas</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="../public/profile.php">Perfil</a>
+                </li>
+
                 <?php if ($usuario_logueado): ?>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="../public/routes/list.php">Rutas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="../public/profile.php">Perfil</a>
-                    </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" href="../public/logout.php">Cerrar sesión</a>
                     </li>
@@ -46,11 +48,12 @@ $usuario_logueado = isset($_SESSION['user']);
                         </span>
                     </li>
                 <?php else: ?>
+                    <!-- Cuando NO hay usuario logueado -->
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="../public/login.php">Iniciar sesión</a>
+                        <a href="../public/login.php" class="btn btn-outline-light btn-sm me-2">Iniciar sesión</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="../public/register.php">Registrarse</a>
+                        <a href="../public/register.php" class="btn btn-success btn-sm">Registrarse</a>
                     </li>
                 <?php endif; ?>
             </ul>
