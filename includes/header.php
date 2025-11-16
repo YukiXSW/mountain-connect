@@ -1,5 +1,7 @@
 <?php
 // includes/header.php
+
+//funcion para ver si el usuario esta logueado.
 function usuario_logueado(){
     
 if (session_status() === PHP_SESSION_NONE) {
@@ -39,7 +41,7 @@ if (session_status() === PHP_SESSION_NONE) {
                         <a class="nav-link text-white" href="../public/profile.php">Perfil</a>
                     </li>
 
-                    <?php if (usuario_logueado()): ?>
+                    <?php if (usuario_logueado()): ?> <!--Si el usuario esta logueado aparecerá las siguientes opciones-->
                         <li class="nav-item">
                             <a class="nav-link text-white" href="../public/logout.php">Cerrar sesión</a>
                         </li>
@@ -49,7 +51,7 @@ if (session_status() === PHP_SESSION_NONE) {
                             </span>
                         </li>
                     <?php else: ?>
-                        <!-- Cuando NO hay usuario logueado -->
+                        <!-- Cuando NO hay usuario logueado solo aparecera las siguientes opciones -->
                         <li class="nav-item">
                             <a href="../public/login.php" class="btn btn-outline-light btn-sm me-2">Iniciar sesión</a>
                         </li>
