@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <h2>Iniciar sesión</h2>
 
         <?php if ($error): ?>
-            <p style="color:red;"><?= $error ?></p>
+            <p style="color:red;"><?= $error ?></p> <!--si hay algun error muestra el mensaje en color rojo -->
         <?php endif; ?>
         <!-- Formulario de login -->
          <div class="profile-card">
