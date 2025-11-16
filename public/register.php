@@ -9,6 +9,16 @@ if (!isset($_SESSION['users'])) {
 $errors = []; #Creamos una variable para los errores
 $success = "";
 
+function validarEmail($email) {
+    if (empty($email)) {
+        return "El email es obligatorio.";
+    }
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        return "El email no tiene un formato válido.";
+    }
+    return "";
+}
+
 // Si se envía el formulario
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
@@ -23,10 +33,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Validaciones
     if (empty($username)) $errors['username'] = "El nombre de usuario es obligatorio.";
-    if (empty($email)) {
-        $errors['email'] = "El email es obligatorio.";
-    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $errors['email'] = "El email no tiene un formato válido.";
+    //Validación de email usando la función creada
+    $errorEmail = validarEmail($email);
+    if ($errorEmail !== "") {
+        $errors['email'] = $errorEmail;
     }
 
     if (empty($password)) { # Si la linea está vacía mostramos el error
