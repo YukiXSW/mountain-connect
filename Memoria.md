@@ -71,4 +71,11 @@ Y código html :)
 ![profile.php](/assets/images/paginaprofile.jpg)
 
 Estando en la página de profile.php, en el header, tienes 4 opciones, la primera te lleva a la pagina principal que es _/public/index.php_. 
-En la página de _index.php_, aparece en el header, la opción de inicio, que es donde nos situamos, las rutas, el perfil y cerrar sesión del usuario. Además tenemos 2 opciones
+En la página de _index.php_, aparece en el header, la opción de inicio, que es donde nos situamos, las rutas, el perfil y cerrar sesión del usuario. Además tenemos 2 opciones, en caso de que no tengas la sesión iniciada, te aparecerá las opciones de Iniciar sesión y Registrarse.
+Al cerrar sesión, se borra tu cuenta automaticamente porque  
+```
+session_unset(); # Elimina todas las variables de sesión actuales.
+session_destroy(); # Destruye la sesión completa en el servidor.
+```
+
+del archivo logout.php
